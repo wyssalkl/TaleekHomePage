@@ -1,0 +1,244 @@
+/*================
+Table of contents 
+==================
+1.Global styles
+2.Header
+3.Middle
+4.Wave
+*/
+
+
+
+/*==============
+ 1.Global style
+ ================*/
+html{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+*{
+    margin:0;
+    color: #ffffff;
+    font-family: sans-serif;
+}
+
+
+
+.cover{
+    background-image: url(https://taleek.com/img/bg-layer.svg);
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-color: brown;
+    position: relative;
+    
+}
+
+
+
+
+/*===============
+ 2.Header
+ ================*/
+
+
+header {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.logo{
+
+    margin-top: 15px;
+}
+
+p{
+   display: inline-block;
+   position: relative; /*bech najmou n7arakouh selon blastou l initiale bel top */
+   top: -15px;
+   font-size: 25px;
+}
+
+a{
+   text-decoration: none;
+   font-size: 20px;
+   margin:15px;
+   opacity: 0.5;
+   transition:all 0.3s;
+
+    
+}
+
+a:hover{
+    opacity: 1;
+}
+
+nav{
+    margin-top: 31px;
+}
+
+
+
+/*===============
+ 3.Middle
+ ================*/
+
+.middle{
+    height: 400px;
+    position: relative; /*bech mba3d najmou nharkou l hajet fou9ha */
+    margin-top: 20px;
+}
+
+h1{
+    text-align: center;
+    font-size: 70px;
+}
+
+.main-img{
+    width: 700px;
+    display: block;      /*bech njib el tof fel west na3mel el display w l margins haka*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left{
+
+
+    position: absolute; /*tet7arak benesba lel 3onsor el père mte3ha eli houwa fl cas mte3na l'class "middle" w hiya nhotoulha position:relative*/
+    top: 35%; /*35% par rapport bouh , bech k nkabar w nsaghar l ecran yemchi m3ah*/
+    left: 15%;
+
+}
+
+button{
+    all: unset;
+    border: 1px solid goldenrod;
+    background: transparent;
+    border-radius: 12px;
+    padding: 10px 15px;
+    display: block;
+    margin: 20px 0;
+    cursor: pointer;
+    background-color: goldenrod;
+    font-size: 25px;
+    transition: all 0.3s;
+    
+}
+
+button:hover{
+   
+    padding: 5px 10px;
+    font-size: 20px;
+   
+}
+
+@media (max-width: 900px) {
+    .cover{
+        height: 600px;
+
+
+    }
+
+    header {
+    display: flex;
+    justify-content: space-between;
+
+    }
+
+    .left{
+        
+        text-align: center;
+        position: static; /*iftiradhya par rapport l originale*/
+    }
+    button{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .main-img{
+        width: 300px;
+        display: block;      /*bech njib el tof fel west na3mel el display w l margins haka */
+        margin-left: auto￼
+        ;
+        margin-right: auto;
+    }
+    a{
+        text-decoration: none;
+        font-size: 10px;
+        margin: 5px;
+        opacity: 0.5;
+        transition:all 0.3s;
+     
+         
+     }
+   
+    h1{
+        text-align: center;
+        font-size: 50px;
+    }
+    
+}
+
+
+/*===============
+ 4.Wave
+ ================*/
+.wave{
+  
+    position: absolute;
+    width: 100%;
+    bottom: 0; /*par rapport lbouh melouta*/
+    height: 150px;
+    background-image: url(wave.png);
+    animation: waveani 20s infinite;
+    background-size: cover;
+}
+
+@keyframes waveani { /*permet aux auteurs de définir les étapes qui composent la séquence d'une animation CSS*/
+    0%{
+        background-position: 1000px; /*ki tebda valeur wahda maanehabch yet7arak aal axe x khw*/
+    }
+    50%{
+        background-position: 500px;
+    }
+    100%{
+        background-position: 1000px;
+    }
+    /*lezem el 0% wel 100% yebdew kif kif bch yebda mezyen*/
+}
+
+.wave::before{
+
+
+    content: "";
+    background-image: url(wave.png);
+    opacity: 0.5;
+    width: 100px;
+
+    
+    position: absolute;
+    width: 100%;
+
+    bottom: 0; /*par rapport lbouh melouta*/
+    height: 247px;
+    background-size: cover;
+    animation: waveanirev 20s infinite;
+    
+    
+}
+@keyframes waveanirev { /*permet aux auteurs de définir les étapes qui composent la séquence d'une animation CSS*/
+    0%{
+        background-position: -1000px; /*ki tebda valeur wahda maanehabch yet7arak aal axe x khw*/
+    }
+    50%{
+        background-position: -500px;
+    }
+    100%{
+        background-position: -1000px;
+    }
+    /*lezem el 0% wel 100% yebdew kif kif bch yebda mezyen*/
+}
